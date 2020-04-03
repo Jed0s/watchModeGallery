@@ -1,9 +1,8 @@
-import React, { useEffect, useState, Component } from 'react';
-import { StyleSheet, View, Dimensions, TouchableOpacity, TouchableWithoutFeedback, ImageBackground } from 'react-native';
-//import { Actions, Router, Scene } from 'react-native-router-flux';
-import fetch from 'node-fetch';
+import React from 'react';
+import { StyleSheet, View, Dimensions, TouchableWithoutFeedback, ImageBackground } from 'react-native';
 
-const { height, width } = Dimensions.get('screen');
+const width = Dimensions.get('window').width;
+
 
 export default function CurrentImage({route, navigation }) {
     const { image } = route.params;
@@ -16,7 +15,7 @@ export default function CurrentImage({route, navigation }) {
             >
                 <ImageBackground
                     source = {{ uri: image.urls.regular }}
-                    style={{ width: width, height: image.height * width / image.width }}
+                    style = {{ width: width, height: image.height * width / image.width }}
                     resizeMode="contain"
                 />
             </TouchableWithoutFeedback>

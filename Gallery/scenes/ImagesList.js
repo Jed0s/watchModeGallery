@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Image, StyleSheet, View, ActivityIndicator, TouchableOpacity,
-    FlatList, Button, Dimensions, TouchableWithoutFeedback, Text, ImageBackground } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, FlatList, Button,
+    Dimensions, TouchableWithoutFeedback, Text, ImageBackground } from 'react-native';
 import fetch from 'node-fetch';
 import APP_ACCESS_KEY from '../confident/secret';
 
-const { height, width } = Dimensions.get('screen');
-
+const width = Dimensions.get('window').width;
 
 
 export default function ImagesList({ navigation }) {
@@ -65,24 +64,9 @@ export default function ImagesList({ navigation }) {
             />
         </View>
     )
-
 }
 
-/*
-export default function ImagesList({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
-            <Button
-                title='Go to Profile screen'
-                onPress = {() => {
-                    navigation.navigate('CurrentImage', {name: 'Ruslan'});
-                }}
-            />
-        </View>
-    )
-}
-*/
+
 const styles = StyleSheet.create ({
     bottomText: {
         color: 'white',
@@ -94,7 +78,7 @@ const styles = StyleSheet.create ({
         flex: 1,
         backgroundColor: 'black',
     },
-    image: { /* TODO: delete useless styles */
+    image: {
         width: width,
         marginBottom: 2,
         justifyContent: 'flex-end',
